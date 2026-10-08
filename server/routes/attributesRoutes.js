@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const controller = require("../controllers/attributesController");
+console.log("Controller Loaded:", controller);
+router.get("/", controller.getAttributes);
+router.get("/:id", controller.getAttributeById);
+router.post("/", controller.addAttribute);
+router.put("/:id", controller.updateAttribute);
+router.delete("/:id", controller.deleteAttribute);
+module.exports = router;
